@@ -33,19 +33,20 @@ func runTasks(names: String...) {
   taskList.runTasks(names)
 }
 
-func task(name: String, description: String?, action: () -> ()) {
+func task(name: String, description: String?, action: () -> ()) -> Task {
   let task = Task(name: name, description: description, action: action)
   var newTasks = taskList.tasks
   newTasks.append(task)
   taskList = TaskList(newTasks)
+  return task
 }
 
-func task(name: String, action: () -> ()) {
-  task(name, nil, action)
+func task(name: String, action: () -> ()) -> Task {
+  return task(name, nil, action)
 }
 
-func task(name: String, tasks: String...) {
-  task(name, nil) {
+func task(name: String, tasks: String...) -> Task {
+  return task(name, nil) {
     taskList.runTasks(tasks)
   }
 }
