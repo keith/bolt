@@ -6,7 +6,7 @@ written in Swift.
 
 ## Examples
 
-(From `main.swift`)
+(See `main.swift`)
 
 Run a task:
 
@@ -49,3 +49,13 @@ runTask("Custom Task")
 // 2 * 2 is 4
 // No task named 'Missing Task' exists
 ```
+
+### Now What?
+
+If this proved to be an interesting idea, there would need to be a
+`Rakefile` equivalent for bolt. This could be strange because
+Swift/Objective-C do not have any `eval` like function. This could be
+handled by piping the contents of this file into a temporary executable
+script. If you have any thoughts on this concept please [open an
+issue](https://github.com/Keithbsmiley/bolt/issues/new) where we can
+discuss them.
